@@ -20,7 +20,7 @@ pipeline {
 	}
 	post{
 		success{
-			archiveArtifacts artifacts: 'build_number', fingerprint: true
+			archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
 		}
 	}
 }
