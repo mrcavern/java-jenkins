@@ -9,6 +9,7 @@ pipeline {
 		stage ('WRITE'){
 			steps{
 				sh 'echo $BUILD_NUMBER >> build_number'
+				sh 'ant -f build.xml'
 			}	
 		}
 		stage ('READ'){
@@ -20,6 +21,7 @@ pipeline {
 	post{
 		success{
 			archiveArtifacts artifacts: 'build_number', fingerprint: true
+			archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
 		}
 	}
 }
