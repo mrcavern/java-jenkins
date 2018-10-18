@@ -8,11 +8,9 @@ pipeline {
 		}
 		stage ('WRITE'){
 			steps{
-				sh 'echo $BUILD_NUMBER >> build_number'
-			}	
-			steps{
 				sh 'ant -f build.xml -v'
-			}
+			}	
+
 		}
 		stage ('READ'){
 			steps{
