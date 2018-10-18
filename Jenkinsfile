@@ -12,11 +12,6 @@ pipeline {
 			}	
 
 		}
-		stage ('READ'){
-			steps{
-				sh 'cat build_number'
-			}
-		}
 	}
 	post{
 		success{
